@@ -1,0 +1,68 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://data_collector.gd" type="Script" id=1]
+[ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://godot.png" type="Texture" id=3]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 41.9549
+
+[node name="data" type="Node"]
+script = ExtResource( 1 )
+sprites = [ ExtResource( 2 ), ExtResource( 3 ) ]
+position = PoolVector2Array( 0, 0, 0, 0 )
+rotation = PoolIntArray( 0, 0 )
+scale = PoolVector2Array( 0, 0, 0, 0 )
+size = PoolVector2Array( 0, 0, -90, -90 )
+copies_position = PoolVector2Array( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 )
+copies_rotation = PoolIntArray( 0, 0, 0, 0, 0 )
+copies_scale = PoolVector2Array( 1, 1, 0.01, 0.01, 1, 1, 1, 1, 1, 1 )
+body_type = PoolStringArray( "rigidbody2d", "staticbody2d" )
+collision_type = PoolStringArray( "boxshape", "boxshape" )
+object_index = PoolIntArray( 0, 1 )
+enable_create_copy = true
+number_of_copies = 5
+mass = PoolIntArray( 1, 1, 1, 1, 1 )
+weight = PoolIntArray( 10, 10, 10, 10, 10 )
+gravity_scale = PoolIntArray( 0, 0, 0, 0, 0 )
+linear_damp = PoolIntArray( 0, 0, 0, 0, 0 )
+linear_velocity = PoolVector2Array( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 )
+angular_velocity = PoolIntArray( 5, 6, 5, 5, 5 )
+angular_damp = PoolIntArray( 0, 0, 0, 0, 0 )
+applied_force = PoolVector2Array( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 )
+applied_torque = PoolIntArray( 0, 0, 0, 0, 0 )
+enable_line_edit = true
+show_line = true
+object_rotate_to_line_angle = true
+shift_vector = PoolVector2Array( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 )
+point_edit_index = 3
+enable_line_collision = true
+point_to_coexist = PoolIntArray( 0, 0, 0, 0, 0 )
+old_pos_in_list = PoolIntArray( 1, 0, 0, 1, 0 )
+object_number = PoolIntArray( 1, 0, 0, 1, 0 )
+
+[node name="fmfmds" type="Line2D" parent="."]
+points = PoolVector2Array( 25.5945, 263.991, 132.223, 458.793, 476.715, 518.258, 612.051, 296.799, 700.224, 63.037 )
+
+[node name="ball" type="RigidBody2D" parent="."]
+editor/display_folded = true
+position = Vector2( 420, 290 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="ball"]
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ball"]
+shape = SubResource( 1 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 730.0
+margin_top = 100.0
+margin_right = 976.0
+margin_bottom = 148.0
+text = "POSITION YOUR MOUSE AT ANY POINT IN SPACE THEN PRESS PAGEUP  TO MOVE A SELECTED LINE TO MOUSE POSITION(CHECK LINE 612 IN CODE)"
+align = 1
+valign = 1
+autowrap = true
